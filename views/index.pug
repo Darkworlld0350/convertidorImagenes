@@ -1,0 +1,9 @@
+extends layout 
+
+block content
+  .container-general
+    h1 #{title}
+    p Por favor, selecciona las imágenes que deseas convertir:
+    form(action="/convert", method="post", enctype="multipart/form-data")
+      input(type="file", name="image", accept="image/png, image/jpeg, image/svg+xml, image/webp", multiple)
+      button(type="submit") Convertir
