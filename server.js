@@ -1,10 +1,12 @@
 const express = require('express');
 const session = require('express-session');
 const app = express();
+const multer = require('multer');
 const path = require('path');
 const router = require('./routes/router');
 //const authMiddlewares =require('./middlewares/authMiddleware');
 //const mysql2 = require('mysql2/promise');
+const upload = multer({dest: 'uploads/'});
 const usuarios = require('./database/table/usuarios');
 //const cookieparser = require('cookie-parser');
 const dotenv = require('dotenv');
@@ -20,6 +22,9 @@ dotenv.config();
     //saveUninitialized: false,
    // store: new MySQLStore
 //}));
+
+app.post('/images/single', upload.single('imagenPerfil'), (req, res) => {
+    });
 
 //Middleware para procesar los archvivos estaticos para la carpeta public
 app.use(express.static('public'));

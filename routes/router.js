@@ -2,17 +2,20 @@
 
 const express = require('express');
 const router = express.Router();
+const imageRoutes = require('./routes/imageRoutes'); 
 const authMiddleware = require('../middlewares/authMiddleware');
 
 // Importa las rutas específicas
 const index = require('./index');
-const login = require('./login');
-const registro = require('./registro');
+const signin = require('./signin');
+const signup = require('./signup');
+
 
 //Cofiguracion de rutas
 
 router.use('/', index);
-router.use('/login', login);
-router.use('/registro', registro);
+router.use('/signin', signin);
+router.use('/signup', signup);
+router.use('/imageRoutes', imageRoutes);
 
 module.exports = router;
