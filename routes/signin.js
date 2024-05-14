@@ -1,15 +1,9 @@
-//routes/login.js
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
-const authMiddleware = require('../middlewares/authMiddleware'); // Middleware para proteger rutas
 
-
-// Ruta para mostrar el formulario de login
+// Ruta para manejar la solicitud GET en la ruta raíz
 router.get('/', (req, res) => {
-  res.render('signin', { title: 'Iniciar sesión', user: req.user != null ? `${req.user.nombre}` : '' });
+  res.render('signin', { title: 'Signin' });
 });
-
-
 
 module.exports = router;

@@ -1,28 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap')
 
-$uniquifier: 'Noto style'
-$weight: 400
-
+// Variables de color
 $mainColor: #fdfdfd
 $navColor: #11609c
 $textColor: #0573fa
 $titleColor: #078dfb
 $hoverColor: #1b5fb8
-
 $border-radius: 20px
 
-.material-symbols-rounded
-  font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24
+// Fuentes
+$uniquifier: 'Noto style'
+$weight: 400
 
-.noto-sans-#{$uniquifier}
-  font-family: "Noto Sans", sans-serif
-  font-weight: $weight
-  font-style: normal
-
-.container-general
-    text-align: center
-
+// Estilos para el cuerpo y la navegación
 body
   font-family: "Noto Sans", sans-serif
   margin: 0
@@ -34,7 +25,7 @@ nav
   justify-content: space-between
   align-items: center
   background-color: $navColor
-  padding: 5px 0
+  padding: 10px 0
   text-align: center
 
   ul
@@ -58,181 +49,38 @@ nav
         &:hover
           background-color: $hoverColor
 
-i
-  vertical-align: middle
-
-.badge
-  position: relative
-  top: -2px
-  background-color: $hoverColor
-  color: white
-  border-radius: 50%
-  padding: 5px 8px
-  font-size: 12px
-
-.container
-  width: auto
-
-h1
+// Estilos para el formulario de carga
+#upload-form
   text-align: center
-  color: $titleColor
+  margin-top: 50px
 
-.centered-index-content
-  margin: 5% 10% 0 10% /* Esto centra el div horizontalmente en la página */
-  //text-align: justify /* Esto centra el contenido dentro del div */
+  h1
+    color: $titleColor
+    font-size: 24px
 
-.login-container
-  max-width: 400px
-  margin: 0 auto
-  padding: 20px
-  border: 1px solid #ccc
-  border-radius: 5px
-  position: absolute
-  top: 50%
-  left: 50%
-  transform: translate(-50%, -50%)
-  width: 90%
+  .form-group
+    margin-top: 20px
 
-.title
-  font-size: 24px
-  text-align: center
-  //margin-bottom: 20px
+    label
+      color: $textColor
+      font-size: 16px
+      margin-bottom: 5px
 
-.login-form
-  display: flex
-  flex-direction: column
-  align-items: center
+    input[type='file'], select
+      width: 100%
+      padding: 8px
+      font-size: 16px
+      border: 1px solid $navColor
+      border-radius: $border-radius
+      margin-bottom: 10px
 
-.form-group
-  display: flex
-  justify-content: start
-  width: 100%
-  flex-direction: column
-
-  button
-    color: white
-    background-color: $navColor
-    border-radius: $border-radius
-    align-self: center
-  
-    &:hover
-      background-color: $hoverColor
-
-#mostrarContrasena
-  width: 80px
-  align-self: flex-end
-
-.form-label
-  font-size: 16px
-  margin: 10px 0
-
-.form-input
-  width: 100%
-  padding: 8px
-  font-size: 16px
-  border: 1px solid $navColor
-  border-radius: $border-radius
-  align-self: center
-  
-  input:hover, input:focus, input:active, input:focus-visible
-    border: 1px solid $hoverColor
-    outline-width: 1px
-    outline-style: solid
-    outline-color: $hoverColor
-
-.show-password-label
-  font-size: 12px
-
-.submit-button
-  padding: 10px
-  font-size: 16px
-  background-color: $navColor
-  color: white
-  border: none
-  border-radius: $border-radius
-  cursor: pointer
-  margin: 20px
-  width: 100%
-  
-  &:hover
-    background-color: $hoverColor
-
-.register-link
-  margin-top: 10px
-  text-align: center
-
-.carrito-container
-  display: flex
-
-table
-  width: 100%
-  border-spacing: 0
-  border-collapse: separate
-  border-radius: $border-radius
-  border: 0.5px solid black
-  overflow: hidden
-
-  th
-    padding: 10px
-    text-align: center
-  
-  td
-    padding: 10px
-    text-align: initial
-    border-top: 0.5px solid black
-    vertical-align: middle
-
-  tr:nth-child(even)
-    background-color: #DFCCFB
-
-  tr:hover
-    background-color: #D9ACF5
-
-/* Apply a border to the right of all but the last column */
-table th:not(:last-child),
-table td:not(:last-child) 
-  border-right: 0.5px solid black
-
-
-
-.general-container
-  margin: 5%
-  min-width: 250px
-
-// Media queries para dispositivos móviles
-@media only screen and (max-width: 600px)
-  // Aquí van los estilos específicos para dispositivos móviles
-  nav
-    padding: 5px 0
-
-    ul
-      margin-left: 10px
-
-    li
-      margin-right: 10px
-
-  .catalogo-container
-    margin: 5% 20% 5% 20%
-
-  .centered-index-content
-    margin: 5% 10% 0 10%
-
-  .producto-container
-    grid-template-columns: repeat(1, minmax(100px, 1fr))
-
-// Media queries para tablets
-@media only screen and (min-width: 601px) and (max-width: 1024px)
-  // Aquí van los estilos específicos para tablets
-
-  .catalogo-container
-    margin: 5% 15% 5% 15%
-
-  .centered-index-content
-    margin: 5% 10% 0 10%
-
-  .producto-container
-    grid-template-columns: repeat(2, minmax(200px, 1fr))
-
-// Media queries para desktops
-@media only screen and (min-width: 1025px)
-  // Aquí van los estilos específicos para desktops
+    button[type='submit']
+      color: white
+      background-color: $navColor
+      border-radius: $border-radius
+      padding: 10px 20px
+      font-size: 16px
+      cursor: pointer
+      transition: background-color 0.3s
+      &:hover
+        background-color: $hoverColor

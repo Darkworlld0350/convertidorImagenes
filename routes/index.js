@@ -1,10 +1,9 @@
-// routes/index.js
 const express = require('express');
 const router = express.Router();
 
-// Rutas públicas
+// Ruta para manejar la solicitud GET en la ruta raíz
 router.get('/', (req, res) => {
-  res.render('index', { title: req.user != null ? `Welcome ${req.user.nombre}` : 'IMAGE CONVERTOR', user: req.user != null ? `${req.user.nombre}` : ''});
+  res.render('index', { title: 'IMAGE CONVERTOR' });
 });
 
 module.exports = router;
